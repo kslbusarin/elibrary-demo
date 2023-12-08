@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../">eLibrary</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../../front/home/"
+            >หน้าแรก</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../front/search/">ค้นหา</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./../front/categories/">หมวดหมู่</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="url_myborrow" href="">หนังสือของฉัน</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <div class="text-white mt-1 me-2" id="txt_username"></div>
+        <!-- <a class="btn btn-outline-light" href="authen" role="button">Login</a> -->
+        <div id="btn_authen"></div>
+        <script>
+          let username = localStorage.getItem("username");
+          console.log("username", localStorage.getItem("username"));
+          if (username) {
+            document.getElementById("txt_username").innerHTML =
+              localStorage.getItem("username");
+            document.getElementById(
+              "btn_authen"
+            ).innerHTML = `<a class="btn btn-outline-light" onclick="logout()" role="button">Logout</a>`;
+            // document.getElementById("url_myborrow").href = "myborrow/index.php?id="+sessionStorage.getItem("userid");
+          } else {
+            document.getElementById("username").innerHTML = "";
+            document.getElementById(
+              "btn_authen"
+            ).innerHTML = `<a class="btn btn-outline-light" href="authen" role="button">Login</a>`;
+          }
+
+          function logout() {
+            localStorage.clear();
+            location.reload();
+          }
+        </script>
+      </form>
+    </div>
+  </div>
+</nav>

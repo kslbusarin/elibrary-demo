@@ -1,0 +1,28 @@
+// 3 ส่วนนี้จำเป็นต้องมี
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+ 
+/* กำหนด thme color */
+$theme-colors: (
+    "blue":$blue,
+    "indigo":$indigo,
+    "purple":$purple,
+    "pink":$pink,
+    "red":$red,
+    "orange":$orange,
+    "yellow":$yellow,
+    "green":$green,
+    "teal":$teal,
+    "cyan":$cyan,
+    "primary":$primary,
+    "secondary":$secondary,
+    "success":$success,
+    "info":$info,
+    "warning":$warning,
+    "danger":$danger,
+    "light":$light,
+    "dark":$dark
+) !default;
+
+@import "../node_modules/bootstrap/scss/bootstrap";

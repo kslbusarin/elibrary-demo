@@ -1,0 +1,5 @@
+backend/pdfviewer/*
+backend/class/connect_db.php
+backend/class/connect_orcl.php
+backend/class/connect_payment.php
+file_preview/files/*

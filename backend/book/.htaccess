@@ -1,0 +1,2 @@
+# ReWriteEngine On
+# RewriteRule ^profile/([^/.]+)?$ bookdetail.php?id=$1 [L]

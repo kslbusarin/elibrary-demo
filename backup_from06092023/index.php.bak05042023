@@ -1,0 +1,904 @@
+<?php 
+    session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Sarayut">
+        <meta name="generator" content="Sarayut">
+        
+        <title>elibrary</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="front/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+        <style>
+        @media (min-width: 768px) {
+            .carousel-inner1 {
+                display: flex;
+            }
+            .carousel-inner {
+              display: flex;
+            }
+            .carousel-item {
+              margin-right: 0;
+              flex: 0 0 25%;
+              display: block;
+            }
+            
+            .carousel-inner1 {
+              position: relative;
+              width: 100%;
+              overflow: hidden;
+
+            }
+            /* ------------ Banner -------------------*/
+
+              .carousel-control-next1 {
+                  right: 0;
+              }
+
+              .carousel-control-prev1 {
+                  left: 0;
+              }
+
+              .carousel-control-next-icon1, .carousel-control-prev-icon1 {
+                  display: inline-block;
+                  width: 2rem;
+                  height: 2rem;
+                  background-repeat: no-repeat;
+                  background-position: 50%;
+                  background-size: 100% 100%;
+              }
+
+              .carousel-control-next1, .carousel-control-prev1 {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 15%;
+                  padding: 0;
+                  color: #fff;
+                  text-align: center;
+                  background: 0 0;
+                  border: 0;
+                  opacity: .5;
+                  transition: opacity .15s ease;
+              }
+
+              .carousel-control-prev-icon1 {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+              }
+
+              .carousel-control-next-icon1 {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+              }
+
+              .visually-hidden1, .visually-hidden1-focusable:not(:focus):not(:focus-within) {
+                  position: absolute!important;
+                  width: 1px!important;
+                  height: 1px!important;
+                  padding: 0!important;
+                  margin: -1px!important;
+                  overflow: hidden!important;
+                  clip: rect(0,0,0,0)!important;
+                  white-space: nowrap!important;
+                  border: 0!important;
+              }
+
+              .carousel-item1 {
+                margin-right: 0;
+                flex: 0 0 100%;
+                display: block;
+              }
+            /* ------------ Banner -------------------*/
+
+
+            /* ------------ New book -------------------*/
+              .carousel-inner-newbook {
+                display: flex;
+                overflow: hidden;
+
+              }
+
+              .carousel-control-next-newbook {
+                  right: 0;
+              }
+
+              .carousel-control-prev-newbook {
+                  left: 0;
+                  background-color: #003C71;
+              }
+
+              .carousel-control-next-icon-newbook, .carousel-control-prev-icon-newbook {
+                  display: inline-block;
+                  width: 2rem;
+                  height: 2rem;
+                  background-repeat: no-repeat;
+                  background-position: 50%;
+                  background-size: 100% 100%;
+              }
+              
+
+              .carousel-control-prev-newbook {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: left;
+                  width: 2%;
+                  padding: 0;
+                  color: #fff;
+                  background-image: linear-gradient(to right, rgb(90, 89, 89), rgba(254, 254, 254, 0.763)) !important;
+                  /* background-color: black !important; */
+                  text-align: center;
+                  background: 0 0;
+                  border: 0;
+                  opacity: .5;
+                  transition: opacity .15s ease;
+              }
+
+              .carousel-control-next-newbook {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: right;
+                  width: 2%;
+                  padding: 0;
+                  color: #fff;
+                  background-image: linear-gradient(to left, rgb(90, 89, 89), rgba(254, 254, 254, 0.763)) !important;
+                  text-align: center;
+                  background: 0 0;
+                  border: 0;
+                  opacity: .5;
+                  transition: opacity .15s ease;
+              }
+
+              .carousel-control-prev-icon-newbook {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+              }
+
+              .carousel-control-next-icon-newbook {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+              }
+
+              .visually-hidden-newbook, .visually-hidden-newbook-focusable:not(:focus):not(:focus-within) {
+                  position: absolute!important;
+                  width: 1px!important;
+                  height: 1px!important;
+                  padding: 0!important;
+                  margin: -1px!important;
+                  overflow: hidden!important;
+                  clip: rect(0,0,0,0)!important;
+                  white-space: nowrap!important;
+                  border: 0!important;
+              }
+
+              .carousel-item-newbook {
+                margin-right: 0;
+                flex: 0 0 25%;
+                display: block;
+              }
+            /* ------------ New book -------------------*/
+
+
+            /* ------------ Recommend  book -------------------*/
+            .carousel-control-prev {
+                  justify-content: left !important;
+                  width: 2% !important;
+                  background-image: linear-gradient(to right, rgb(165, 163, 163), rgba(254, 254, 254, 0.763)) !important;
+              }
+              .carousel-control-next {
+                  justify-content: right !important;
+                  width: 2% !important;
+                  background-image: linear-gradient(to left, rgb(163, 163, 163), rgba(254, 254, 254, 0.763)) !important;
+              }
+            /* ------------ Recommend  book -------------------*/
+
+
+            /* ------------ Categories -------------------*/
+              .carousel-inner-cat {
+                display: flex;
+                overflow: hidden;
+
+              }
+
+              .carousel-control-next-cat {
+                  right: 0;
+              }
+
+              .carousel-control-prev-cat {
+                  left: 0;
+              }
+
+              .carousel-control-next-icon-cat, .carousel-control-prev-icon-cat {
+                  display: inline-block;
+                  width: 2rem;
+                  height: 2rem;
+                  background-repeat: no-repeat;
+                  background-position: 50%;
+                  background-size: 100% 100%;
+              }
+
+              .carousel-control-next-cat, .carousel-control-prev-cat {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 15%;
+                  padding: 0;
+                  color: #fff;
+                  text-align: center;
+                  background: 0 0;
+                  border: 0;
+                  opacity: .5;
+                  transition: opacity .15s ease;
+              }
+
+              .carousel-control-prev-icon-cat {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+              }
+
+              .carousel-control-next-icon-cat {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+              }
+
+              .visually-hidden-cat, .visually-hidden-cat-focusable:not(:focus):not(:focus-within) {
+                  position: absolute!important;
+                  width: 1px!important;
+                  height: 1px!important;
+                  padding: 0!important;
+                  margin: -1px!important;
+                  overflow: hidden!important;
+                  clip: rect(0,0,0,0)!important;
+                  white-space: nowrap!important;
+                  border: 0!important;
+              }
+
+              .carousel-item-cat {
+                margin-right: 0;
+                flex: 0 0 25%;
+                display: block;
+              }
+            /* ------------ Categories -------------------*/
+
+            .card{
+                margin: 0 .5em;
+                box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+                border: none;
+            }
+
+        }
+
+        @media screen and (max-width: 767px) {
+
+
+          /* ------------ Banner -------------------*/
+              .carousel-inner1 {
+                  margin-top: 10%;
+                  display: flex;
+              }
+        
+              .carousel-item1 {
+                  margin-right: 0;
+                  flex: 0 0 100%;
+                  display: block;
+              }
+
+              .carousel-inner1 {
+                position: relative;
+                width: 100%;
+                height: 50% !important;
+                overflow: hidden;
+              }
+
+              .carousel-item1 {
+                position: relative;
+                float: left;
+                width: 100%;
+                backface-visibility: hidden;
+                transition: transform .6s ease-in-out;
+              }
+              .carousel-control-next1 {
+                  right: 0;
+              }
+
+              .carousel-control-prev1 {
+                  left: 0;
+              }
+
+              .carousel-control-next-icon1, .carousel-control-prev-icon1 {
+                  display: inline-block;
+                  width: 2rem;
+                  height: 2rem;
+                  background-repeat: no-repeat;
+                  background-position: 50%;
+                  background-size: 100% 100%;
+              }
+
+              .carousel-control-next1, .carousel-control-prev1 {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 15%;
+                  padding: 0;
+                  color: #fff;
+                  text-align: center;
+                  background: 0 0;
+                  border: 0;
+                  opacity: .5;
+                  transition: opacity .15s ease;
+              }
+
+              .carousel-control-prev-icon1 {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+              }
+
+              .carousel-control-next-icon1 {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+              }
+
+              .visually-hidden1, .visually-hidden1-focusable:not(:focus):not(:focus-within) {
+                  position: absolute!important;
+                  width: 1px!important;
+                  height: 1px!important;
+                  padding: 0!important;
+                  margin: -1px!important;
+                  overflow: hidden!important;
+                  clip: rect(0,0,0,0)!important;
+                  white-space: nowrap!important;
+                  border: 0!important;
+              }
+
+              .carousel-item1 {
+                margin-right: 0;
+                flex: 0 0 100%;
+                display: block;
+              }
+          /* ------------ Banner -------------------*/
+
+          /* ------------ New book -------------------*/
+              #cover_newbook{
+                width: 70% !important;
+              }
+              
+              .carousel-control-next-newbook {
+                  right: 0;
+              }
+
+              .carousel-control-prev-newbook {
+                  left: 0;
+                  background-color: #003C71;
+              }
+
+              .carousel-control-next-icon-newbook, .carousel-control-prev-icon-newbook {
+                  display: inline-block;
+                  width: 2rem;
+                  height: 2rem;
+                  background-repeat: no-repeat;
+                  background-position: 50%;
+                  background-size: 100% 100%;
+              }
+              
+
+              .carousel-control-prev-newbook {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: left;
+                  width: 2%;
+                  padding: 0;
+                  color: #fff;
+                  background-image: linear-gradient(to right, rgb(90, 89, 89), rgba(254, 254, 254, 0.763)) !important;
+                  /* background-color: black !important; */
+                  text-align: center;
+                  background: 0 0;
+                  border: 0;
+                  opacity: .5;
+                  transition: opacity .15s ease;
+              }
+
+              .carousel-control-next-newbook {
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  justify-content: right;
+                  width: 2%;
+                  padding: 0;
+                  color: #fff;
+                  background-image: linear-gradient(to left, rgb(90, 89, 89), rgba(254, 254, 254, 0.763)) !important;
+                  text-align: center;
+                  background: 0 0;
+                  border: 0;
+                  opacity: .5;
+                  transition: opacity .15s ease;
+              }
+
+              .carousel-control-prev-icon-newbook {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+              }
+
+              .carousel-control-next-icon-newbook {
+                  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+              }
+
+              .visually-hidden-newbook, .visually-hidden-newbook-focusable:not(:focus):not(:focus-within) {
+                  position: absolute!important;
+                  width: 1px!important;
+                  height: 1px!important;
+                  padding: 0!important;
+                  margin: -1px!important;
+                  overflow: hidden!important;
+                  clip: rect(0,0,0,0)!important;
+                  white-space: nowrap!important;
+                  border: 0!important;
+              }
+
+              .carousel-item-newbook {
+                margin-right: 0;
+                flex: 0 0 25%;
+                display: block;
+              }
+          /* ------------ New book -------------------*/
+        }
+
+        .navbar-collapse{
+          align-items: center;
+        }
+
+        body{
+          font-family: 'Kanit', sans-serif;
+        }
+        
+        a{
+          text-decoration: none;
+        }
+        .card:hover{
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5) !important
+        }
+        .footer{
+              position: absolute;
+              left: 0;
+              right: 0;
+              width: 99%;
+        }
+
+        </style>
+
+        <link rel="stylesheet" href="front/css/fontawesome-6.1.2/css/all.css">
+        <!-- Link font library -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.css">
+
+		<meta charset="UTF-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Book list</title>
+	</head>
+  <?php
+    //Check acces token from Server
+    if(session('access_token')) {
+        echo "<script></script>";
+    } 
+    else {
+      echo "<script>
+            if(localStorage.getItem('username')){
+              localStorage.clear();
+              // window.location.reload();
+            }
+            </script>";
+    }
+
+    function session($key, $default=NULL) {
+      return array_key_exists($key, $_SESSION) ? $_SESSION[$key] : $default;
+    }
+  ?>
+	<body class="theme_turquoise" style="background-image: linear-gradient(to bottom, #fdfdfd, #dee2e6);">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 col-xs-12">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" class="indi" id="indi1" data-bs-slide-to="0"  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#demo" class="indi" id="indi2" data-bs-slide-to="1" aria-current="true" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#demo" class="indi" id="indi3" data-bs-slide-to="2" aria-current="true" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner1 active">
+                <div class="carousel-item1">
+                  <div class="d-flex justify-content-center">
+                    <img src="https://img.freepik.com/free-vector/illustrated-book-fair-cards_52683-68232.jpg?w=1380&t=st=1662437854~exp=1662438454~hmac=5cec58d44d85a3714bcac568063ba44ede56524d407a1f6c42593d4ccafa4d77" alt="img.png" class="d-block p-2" style="width:100%">
+                  </div>
+                </div>
+                <div class="carousel-item1">
+                  <div class="d-flex justify-content-center">
+                    <img src="https://img.freepik.com/free-vector/notebooks-notepads-diary-planners_107791-9680.jpg?w=1380&t=st=1662438535~exp=1662439135~hmac=5c53797475450dc88bc5a4fcf0b640c0c8c23f828a5c265680517f60fec1a8e6" alt="Los Angeles" class="d-block p-2" style="width:100%">
+                  </div>
+                </div>
+                <div class="carousel-item1">
+                  <div class="d-flex justify-content-center">
+                    <img src="https://img.freepik.com/free-vector/cartoon-book-fair-flyers-template_52683-66253.jpg?w=1380&t=st=1662438447~exp=1662439047~hmac=dc67a49530906d26c892666493e585df326222241358310f84c8c745b5eb0892" alt="Los Angeles" class="d-block p-2" style="width:100%">
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev1 text-dark" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon1" aria-hidden="true"></span>
+                <span class="visually-hidden1">Previous</span>
+              </button>
+              <button class="carousel-control-next1 text-dark" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon1" aria-hidden="true"></span>
+                <span class="visually-hidden1">Next</span>
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+  <div class="container py-3">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">eLibrary</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <!-- <a class="nav-link" href="front/search">ค้นหา</a> -->
+              </li>
+              <li class="nav-item">
+                <!-- <a class="nav-link" href="front/categories">หมวดหมู่</a> -->
+              </li>
+            </ul>
+            <form class="d-flex">
+              <div class="text-white mt-1 me-2" id="txt_username"></div>
+              <!-- <a class="btn btn-outline-light" href="authen" role="button">Login</a> -->
+              <div id="btn_authen"></div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <h2 class="my-4 text-center text-dark">หนังสือ Cambridge</h2>
+    <div id="carouselExampleControlsNewbook" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner-newbook" id="book_cambridge">
+      </div>
+      <button class="carousel-control-prev-newbook" type="button" data-bs-target="#carouselExampleControlsNewbook" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon-newbook" aria-hidden="true"></span>
+        <span class="visually-hidden-newbook">Previous</span>
+      </button>
+      
+      <button class="carousel-control-next-newbook" type="button" data-bs-target="#carouselExampleControlsNewbook" data-bs-slide="next">
+        <span class="carousel-control-next-icon-newbook" aria-hidden="true"></span>
+        <span class="visually-hidden-newbook">Next</span>
+      </button>
+      
+    </div>
+
+    <!-- <h2 class="my-4 text-center text-dark">หนังสือใหม่แนะนำ</h2>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" id="booklist">
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> -->
+
+    <h2 class="my-4 text-center text-dark">Ebook categories</h2>
+    <div id="carouselCatControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner-cat py-4 ps-2">
+          <div class="carousel-item-cat active text-center">
+            <a href="front/categories/categories_detail.php?id=1">
+              <i class="fa-solid fa-language fa fa-3x" style="color: #003C71; opacity: 80%;"></i>
+              <h5 class="mt-3">ภาษาและวรรณคดี</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat text-center">
+            <a href="front/categories/categories_detail.php?id=2">
+              <i class="fa-solid fa-atom fa fa-3x" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">วิทยาศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat text-center">
+            <a href="front/categories/categories_detail.php?id=3">
+              <i class="fa-solid fa-user-group fa fa-3x" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">สังคมศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat text-center">
+            <a href="front/categories/categories_detail.php?id=4">
+              <i class="fa-solid fa-language fa fa-3x" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">เทคโนโลยี</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat text-center">
+            <a href="front/categories/categories_detail.php?id=5">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">ประวัติศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=6">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">รัฐศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=7">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">คณิตศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=8">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">กฏหมาย</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=9">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">ภูมิศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=10">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">การศึกษา</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=11">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">เกษตรศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=12">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">แพทยศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=13">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">วิศวกรรมศาสตร์</h5>
+            </a>
+          </div>
+          <div class="carousel-item-cat  text-center">
+            <a href="front/categories/categories_detail.php?id=14">
+              <i class="fa-solid fa-language fa fa-3x text-gray" style="color: #003C71; opacity: 80%"></i>
+              <h5 class="mt-3">ดนตรี/ศิลปกรรม</h5>
+            </a>
+          </div>
+      </div>
+      <button class="carousel-control-prev-cat pe-5" type="button" data-bs-target="#carouselCatControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon-cat" aria-hidden="true"></span>
+        <span class="visually-hidden-cat">Previous</span>
+      </button>
+      <button class="carousel-control-next-cat ps-5" type="button" data-bs-target="#carouselCatControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon-cat" aria-hidden="true"></span>
+        <span class="visually-hidden-cat">Next</span>
+      </button>
+    </div>
+
+    
+
+    <button class="btn btn-sm btn-warning text-white" type="button" aria-label="View cookie settings" data-cc="c-settings">Cookie Settings</button>
+
+    <div class="footer">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-4 text-center">
+           <img src="../front/images/eLibrary_logo.png" class="d-line" width="75%" alt="">
+          </div>
+
+          <div class="col-3">
+            <h5>เกี่ยวกับระบบ</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="https://dev-elibrary.psu.ac.th/front/consent/" class="nav-link p-0 text-muted">ข้อกำหนดในการเข้าใช้บริการระบบ PSU eLibrary</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">แสดงความคิดเห็น</a></li>
+              <li class="nav-item mb-2"><a href="https://clib.psu.ac.th" class="nav-link p-0 text-muted">เว็บไซต์สำนักทรัพยากรการเรียนรู้คุณหญิงหลง อรรถกระวีสุนทร</a></li>
+            </ul>
+          </div>
+
+          <div class="col-2">
+            <ul class="nav flex-column">
+              <h5>สถิติการเข้าชม</h5>
+              <li class="nav-item mb-2">
+                <!-- hitwebcounter Code START -->
+                <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=8064546&style=0006&nbdigits=5&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" />
+                </a>   
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-3 justify-content-left">
+            <h5 class="ms-3 ">ช่องทางการติดต่อ</h5> 
+              <ul class="nav justify-content-left">
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+            </ul>
+          </div>
+      </footer>
+    </div>
+
+  <!-- <script src="front/js/controller/home.js"></script> -->
+  <script src="front/js/controller/script.js"></script>
+  <script src="front/js/libs/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="front/js/libs/jquery.min.js"></script>
+  <script>
+    var carouselWidth = $(".carousel-inner-cat")[0].scrollWidth;
+    var cardWidth = $(".carousel-item-cat").width();
+    var scrollPosition = 0;
+
+    var carouselWidthnewbook;
+    var cardWidthnewbook;
+    var scrollPositionnewbook = 0;
+
+    // ----- Banner --------//
+      $(".carousel-control-next").on("click", function () {
+        // console.log("-------------------------------------")
+        // console.log("carouselWidth "+carouselWidth)
+        // console.log("cardWidth "+cardWidth)
+        // console.log("scrollPosition "+scrollPosition)
+        // console.log("carouselWidth - cardWidth1 * 4")
+        // console.log(carouselWidth - cardWidth * 4)
+        if (scrollPosition < (carouselWidth - cardWidth * 4)) { //check if you can go any further
+          console.log("If scrollPosition < carouselWidth - cardWidth * 4")
+          console.log("scrollPosition "+scrollPosition)
+          scrollPosition += cardWidth;  //update scroll position
+          $(".carousel-inner").animate({ scrollLeft: scrollPosition },600); //scroll left
+        }
+      });
+      $(".carousel-control-prev").on("click", function () {
+        if((scrollPosition-300)>=300){
+          scrollPosition = scrollPosition-300;
+            $(".carousel-inner").animate({ scrollLeft: scrollPosition },300); //scroll to begin
+        }
+        else if((scrollPosition-300)>0 && (scrollPosition-300)<300){
+          scrollPosition = 0;
+          $(".carousel-inner").animate({ scrollLeft: scrollPosition },0); //scroll to begin
+        }
+
+        scrollPosition = scrollPosition-300;
+       
+      });
+      
+
+      var carouselWidth1 = $(".carousel-inner1")[0].scrollWidth;
+      var cardWidth1 = $(".carousel-item1").width();
+      var scrollPosition1 = 0;
+      var indicator = 1;
+
+      $(".carousel-control-next1").on("click", function () {
+        // console.log("-------------------------------------")
+        // console.log("carouselWidth1 "+carouselWidth1)
+        // console.log("cardWidth1 "+cardWidth1)
+        // console.log("scrollPosition1 "+scrollPosition1)
+        // console.log("carouselWidth1 - cardWidth1")
+        // console.log(carouselWidth1 - cardWidth1)
+
+        if (scrollPosition1 < (carouselWidth1 - cardWidth1)) { //check if you can go any further
+          // console.log("If scrollPosition1 < carouselWidth1 - cardWidth1")
+          // console.log("scrollPosition1 "+scrollPosition1)
+          scrollPosition1 += cardWidth1;  //update scroll position
+          $(".carousel-inner1").animate({ scrollLeft: scrollPosition1 },500); //scroll left
+          //Remove & Add class
+          $("#indi"+indicator).removeClass("active");
+          indicator = indicator+1
+          $("#indi"+indicator).addClass("active");
+        }
+      });
+
+      $(".carousel-control-prev1").on("click", function () {
+      scrollPosition1 = scrollPosition1-cardWidth1;
+      $(".carousel-inner1").animate({ scrollLeft: scrollPosition1 },500); //scroll to begin
+        //Remove & Add class
+        $("#indi"+indicator).removeClass("active");
+        indicator = indicator-1
+        $("#indi"+indicator).addClass("active");
+    });
+    // ----- Banner --------//
+
+    // ----- Event categories --------//
+      var carouselWidth_cat = $(".carousel-inner-cat")[0].scrollWidth;
+      var cardWidth_cat = $(".carousel-item-cat").width();
+      var scrollPosition_cat = 0;
+
+      $(".carousel-control-next-cat").on("click", function () {
+        // console.log("-------------------------------------")
+        // console.log("carouselWidth_cat "+carouselWidth_cat)
+        // console.log("cardWidth_cat "+cardWidth_cat)
+        // console.log("scrollPosition_cat "+scrollPosition_cat)
+        // console.log("carouselWidth_cat - cardWidth_cat")
+        // console.log(carouselWidth_cat - cardWidth_cat)
+        if (scrollPosition_cat < (carouselWidth_cat - cardWidth_cat * 4)) { //check if you can go any further
+          // console.log("If scrollPosition_cat < (carouselWidth_cat - cardWidth_cat * 4)")
+          // console.log(`If ${scrollPosition_cat} < (${carouselWidth_cat} - ${cardWidth_cat} * 4)`)
+          // console.log("scrollPosition_cat "+scrollPosition_cat)
+          scrollPosition_cat += cardWidth_cat;  //update scroll position
+          $(".carousel-inner-cat").animate({ scrollLeft: scrollPosition_cat },600); //scroll left
+        }
+      });
+
+      $(".carousel-control-prev-cat").on("click", function () {
+        scrollPosition_cat = scrollPosition_cat-300;
+        $(".carousel-inner-cat").animate({ scrollLeft: scrollPosition_cat },300); //scroll to begin
+      });
+    // ----- Event categories --------//
+
+      $(function() {
+        // ----- Event NewBook --------//
+          $(".carousel-control-next-newbook").on("click", function () {
+            carouselWidthnewbook = $(".carousel-inner-newbook")[0].scrollWidth;
+            cardWidthnewbook = $(".carousel-item-newbook").width();
+              console.log("-------------------------------------")
+              console.log("carouselWidth-newbook "+carouselWidthnewbook)
+              console.log("cardWidth-newbook "+cardWidthnewbook)
+              console.log("scrollPosition-newbook "+scrollPositionnewbook)
+              console.log("carouselWidth-newbook - cardWidth-newbook * 4")
+              console.log(carouselWidthnewbook - cardWidthnewbook * 4)
+            if (scrollPositionnewbook < (carouselWidthnewbook - cardWidthnewbook * 4)) { //check if you can go any further
+              console.log("If scrollPosition-newbook < carouselWidth-newbook - cardWidth-newbook * 4")
+              console.log("scrollPosition-newbook "+scrollPositionnewbook)
+              scrollPositionnewbook += cardWidthnewbook;  //update scroll position
+              $(".carousel-inner-newbook").animate({ scrollLeft: scrollPositionnewbook },600); //scroll left
+            }
+          });
+          $(".carousel-control-prev-newbook").on("click", function () {
+            if((scrollPositionnewbook-300)>=300){
+              scrollPositionnewbook = scrollPositionnewbook-300;
+              $(".carousel-inner-newbook").animate({ scrollLeft: scrollPositionnewbook },300); //scroll to begin
+              console.log("scrollPosition-newbook "+scrollPositionnewbook)
+            }
+            else if((scrollPositionnewbook-300)>0 && (scrollPositionnewbook-300)<300){
+              scrollPositionnewbook = 0;
+              $(".carousel-inner-newbook").animate({ scrollLeft: scrollPositionnewbook },0); //scroll to begin
+              console.log("scrollPosition-newbook "+scrollPositionnewbook)
+            }
+          });
+        // ----- Event NewBook --------//
+      });
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js"></script>
+  <script defer src="front/js/libs/cc-init.js"></script>
+
+	</body>
+</html>

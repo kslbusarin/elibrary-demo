@@ -1,0 +1,44 @@
+Array
+(
+    [payeeProxyId] => 249380490386491
+    [payeeProxyType] => BILLERID
+    [payeeAccountNumber] => 0987654321
+    [payeeName] => TestBiller1667275737
+    [payerProxyId] => 8057300001
+    [payerProxyType] => ACCOUNT
+    [payerAccountNumber] => 8057300001
+    [payerName] => Sutdarat Joisook
+    [sendingBankCode] => 014
+    [receivingBankCode] => 014
+    [amount] => 195
+    [channelCode] => PMH
+    [transactionId] => 202211012uuDghVJXpDXeo0
+    [transactionDateandTime] => 2022-11-01T11:28:38+07:00
+    [billPaymentRef1] => 123124
+    [billPaymentRef2] => 34534534
+    [billPaymentRef3] => SCB
+    [currencyCode] => 764
+    [transactionType] => Domestic Transfer
+)
+Array
+(
+    [payeeProxyId] => 249380490386491
+    [payeeProxyType] => BILLERID
+    [payeeAccountNumber] => 0987654321
+    [payeeName] => TestBiller1667275737
+    [payerProxyId] => 8057300001
+    [payerProxyType] => ACCOUNT
+    [payerAccountNumber] => 8057300001
+    [payerName] => Sutdarat Joisook
+    [sendingBankCode] => 014
+    [receivingBankCode] => 014
+    [amount] => 195
+    [channelCode] => PMH
+    [transactionId] => 202211074LZ0UVOtaY9s5QC
+    [transactionDateandTime] => 2022-11-07T15:48:29+07:00
+    [billPaymentRef1] => 123124
+    [billPaymentRef2] => 34534534
+    [billPaymentRef3] => SCB
+    [currencyCode] => 764
+    [transactionType] => Domestic Transfer
+)

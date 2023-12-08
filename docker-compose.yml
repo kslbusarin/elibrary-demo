@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  web:
+    build:
+      .
+      # context: ./
+      # dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+      - /Users/busarin/Develop/KYL/bookfile/cover:/data/bookfile/cover
+    container_name: web
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+  db:
+    image: postgres:14-alpine
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: elibrary
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
